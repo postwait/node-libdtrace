@@ -65,6 +65,11 @@
         DTRACE_LLQUANTIZE_NSTEPSHIFT)
 #endif
 
+#if defined(DTRACE_LLQUANTIZE_NSTEPS) && !defined(DTRACE_LLQUANTIZE_NSTEP)
+/* Apple is truly *special* here... */
+#define DTRACE_LLQUANTIZE_NSTEP DTRACE_LLQUANTIZE_NSTEPS
+#endif
+
 using namespace v8;
 using std::string;
 using std::vector;
